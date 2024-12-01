@@ -336,64 +336,30 @@ function Projects() {
 }
 
 function Contact() {
-   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Sprečava reload stranice
 
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
 
-  const [status, setStatus] = useState(""); // Da prikažemo status uspeha/greške
+    try {
+      const response = await fetch("/api/contact", {
+        // Relativna putanja
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-    if (!formData.name) newErrors.name = "Ime je obavezno.";
-    if (!formData.email) {
-      newErrors.email = "Email je obavezan.";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Unesite validan email.";
-    }
-    if (!formData.message) newErrors.message = "Poruka je obavezna.";
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      try {
-const response = await fetch("/api/contact", {          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(formData)
-        });
-
-        const result = await response.json();
-        if (response.ok) {
-          setStatus("Poruka je uspešno poslata!");
-          setFormData({ name: "", email: "", message: "" }); // Resetovanje forme
-        } else {
-          setStatus("Došlo je do greške prilikom slanja poruke.");
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        setStatus("Greška prilikom slanja poruke.");
+      if (response.ok) {
+        alert("Message sent successfully!");
+      } else {
+        alert("Failed to send message.");
       }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error sending message.");
     }
   };
 
@@ -403,13 +369,21 @@ const response = await fetch("/api/contact", {          method: "POST",
       <div className="contact-info">
         <p>
           <a href="https://www.instagram.com/mr.vulic/">
-            <img src="slike/instagram.png" alt="Instagram" className="contact-icon" />
+            <img
+              src="slike/instagram.png"
+              alt="Instagram"
+              className="contact-icon"
+            />
             mr.vulic
           </a>
         </p>
         <p>
           <a href="https://www.linkedin.com/in/sasa-vulic-623367322/">
-            <img src="slike/linkedin.png" alt="LinkedIn" className="contact-icon" />
+            <img
+              src="slike/linkedin.png"
+              alt="LinkedIn"
+              className="contact-icon"
+            />
             Saša Vulić
           </a>
         </p>
@@ -430,10 +404,16 @@ const response = await fetch("/api/contact", {          method: "POST",
         <form onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            required
+          ></textarea>
           <input type="submit" value="Send Message" />
         </form>
       </div>
     </section>
   );
 }
+
