@@ -337,31 +337,34 @@ function Projects() {
 
 function Contact() {
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Sprečava reload stranice
+  event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData.entries());
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData.entries());
 
-    try {
-      const response = await fetch("/api/contact", {
-        // Relativna putanja
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
 
-      if (response.ok) {
-        alert("Message sent successfully!");
-      } else {
-        alert("Failed to send message.");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Error sending message.");
+    const result = await response.json();
+
+    if (response.ok) {
+      alert(result.message || "Poruka je uspešno poslata!");
+      // Opcionalno: resetovanje forme
+      event.target.reset();
+    } else {
+      alert(result.message || "Slanje poruke nije uspelo.");
     }
-  };
+  } catch (error) {
+    console.error("Greška:", error);
+    alert("Greška pri slanju poruke.");
+  }
+};
 
   return (
     <section className="contact-section" id="contact">
