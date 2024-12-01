@@ -343,7 +343,7 @@ function Contact() {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch("/api/contact", { // Relativna putanja
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -365,25 +365,16 @@ function Contact() {
   return (
     <section className="contact-section" id="contact">
       <h2>Contact</h2>
-
       <div className="contact-info">
         <p>
           <a href="https://www.instagram.com/mr.vulic/">
-            <img
-              src="slike/instagram.png"
-              alt="Instagram"
-              className="contact-icon"
-            />
+            <img src="slike/instagram.png" alt="Instagram" className="contact-icon" />
             mr.vulic
           </a>
         </p>
         <p>
           <a href="https://www.linkedin.com/in/sasa-vulic-623367322/">
-            <img
-              src="slike/linkedin.png"
-              alt="LinkedIn"
-              className="contact-icon"
-            />
+            <img src="slike/linkedin.png" alt="LinkedIn" className="contact-icon" />
             Saša Vulić
           </a>
         </p>
@@ -404,12 +395,7 @@ function Contact() {
         <form onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            required
-          ></textarea>
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
           <input type="submit" value="Send Message" />
         </form>
       </div>
