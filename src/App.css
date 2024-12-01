@@ -523,30 +523,35 @@ nav ul li a:hover {
     margin-top: 10px; /* Add space above button */
   }
 
-  .skills {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Postavlja dva elementa po redu */
-    gap: 20px; /* Razmak između elemenata */
-    justify-content: center; /* Centriranje grida */
-  }
+  .skills-section {
+  text-align: center; /* Centriranje sadržaja */
+}
 
-  .skill {
-    display: flex;
-    flex-direction: column; /* Postavlja sadržaj vertikalno (slika iznad, tekst ispod) */
-    align-items: center; /* Centriranje slike i teksta */
-    width: 100%; /* Svaki element zauzima ceo prostor u koloni */
-  }
+.skills {
+  gap: 20px; /* Smanji razmak između veština za manje ekrane */
+}
 
-  .skill-icon {
-    width: 120px; /* Prilagođena veličina slike za mobilne uređaje */
-    height: 120px;
-  }
+.skill {
+  display: flex; /* Dodato za vertikalno poravnanje sadržaja */
+  flex-direction: column; /* Postavi sadržaj vertikalno (slika iznad, tekst ispod) */
+  align-items: center; /* Centriraj sadržaj unutar svakog elementa */
+  width: calc(50% - 20px); /* Postavi širinu na 50% minus razmak za dva po redu */
+  max-width: none; /* Ukloni ograničenje maksimalne širine */
+  opacity: 1; /* Postavi na 1 da bi odmah bio vidljiv */
+  transition: none; /* Isključi tranziciju za mobilne uređaje */
+  transform: none; /* Osiguraj da se ne primenjuje transformacija */
+}
 
-  .skill-name {
-    font-size: 1.2em; /* Prilagođavanje veličine fonta */
-    margin-top: 10px; /* Razmak između slike i teksta */
-    text-align: center; /* Poravnanje teksta na sredinu */
-  }
+.skill-icon {
+  width: 100px; /* Prilagodi veličinu ikone za mobilne uređaje */
+  height: 100px; /* Održavaj odnos širine i visine */
+}
+
+.skill-name {
+  font-size: 1.2em; /* Prilagodi veličinu fonta za mobilne uređaje */
+  margin-top: 10px; /* Dodaj razmak između slike i teksta */
+  text-align: center; /* Poravnaj tekst na sredinu */
+}
 
   .education-list {
     list-style-type: none; /* Uklanjanje oznaka liste */
