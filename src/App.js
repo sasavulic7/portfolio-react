@@ -286,7 +286,7 @@ function Projects() {
 
               <div className="project-card">
           <img
-            src="/slike/umbrella.png"
+            src="/slike/umbrella.jpg"
             alt="Project 2"
             className="project-image"
           />
