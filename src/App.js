@@ -284,20 +284,31 @@ function Projects() {
           <a href="https://crni-decak.vercel.app/">Take a look</a>
         </div>
 
-        <div className="project-card">
+              <div className="project-card">
           <img
-            src="/slike/kviz.png"
+            src="/slike/umbrella.png"
             alt="Project 2"
             className="project-image"
           />
-          <h3>Quizz</h3>
+          <h3>Umbrella Weather</h3>
+          <h4>Technologies: React, Tailwind</h4>
+          <a href="https://umbrella-weather-omega.vercel.app/">Take a look</a>
+        </div>
+
+        <div className="project-card">
+          <img
+            src="/slike/kviz.png"
+            alt="Project 3"
+            className="project-image"
+          />
+          <h3>Quiz</h3>
           <h4>Technologies: React, CSS</h4>
           <a href="https://kviz-znanja.vercel.app/">Take a look</a>
         </div>
         <div className="project-card">
           <img
             src="/slike/elegancija.png"
-            alt="Project 3"
+            alt="Project 4"
             className="project-image"
           />
           <h3>Elegancija Jewerly</h3>
@@ -309,7 +320,7 @@ function Projects() {
         <div className="project-card">
           <img
             src="/slike/bella.png"
-            alt="Project 4"
+            alt="Project 5"
             className="project-image"
           />
           <h3>Bella Cosmetics</h3>
@@ -321,7 +332,7 @@ function Projects() {
         <div className="project-card">
           <img
             src="/slike/salon.png"
-            alt="Project 5"
+            alt="Project 6"
             className="project-image"
           />
           <h3>Barber Shop</h3>
