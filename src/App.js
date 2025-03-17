@@ -284,6 +284,17 @@ function Projects() {
           <a href="https://crni-decak.vercel.app/">Take a look</a>
         </div>
 
+              <div className="project-card">
+          <img
+            src="/slike/izmedjukorica.png"
+            alt="Project 7"
+            className="project-image"
+          />
+          <h3>Između Korica</h3>
+          <h4>Technologies: React, Node.Js, Express, MongoDB, Tailwind, JWT</h4>
+          <a href="https://crni-decak.vercel.app/">Take a look</a>
+        </div>
+
         <div className="project-card">
           <img
             src="/slike/umbrella.png"
@@ -341,6 +352,7 @@ function Projects() {
             Take a look
           </a>{" "}
         </div>
+              
       </div>
     </section>
   );
