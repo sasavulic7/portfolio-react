@@ -261,6 +261,11 @@ function Education() {
               </strong>{" "}
               - Issued by: Udemy - Jonas Schmedtmann - Issued on: May 2024
             </li>
+          <strong>
+                The Ultimate React Course 2024: React, Next.js, Redux & More
+              </strong>{" "}
+              - Issued by: Udemy - Jonas Schmedtmann - Issued on: Mart 2025
+            </li>
           </ul>
         </div>
       </div>
