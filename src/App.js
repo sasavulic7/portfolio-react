@@ -297,7 +297,7 @@ function Projects() {
           />
           <h3>Između Korica</h3>
           <h4>Technologies: React, Node.Js, Express, MongoDB, Tailwind, JWT</h4>
-          <a href="https://crni-decak.vercel.app/">Take a look</a>
+          <a href="https://izmedju-korica-frontend.vercel.app/">Take a look</a>
         </div>
 
         <div className="project-card">
