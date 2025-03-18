@@ -25,6 +25,7 @@ export default function App() {
         <Skills />
         <Education />
         <Projects />
+        <Designs />
         <Contact />
       </div>
       <Navbar />
@@ -56,6 +57,9 @@ function Navbar() {
         </li>
         <li>
           <a href="#projects">Projects</a>
+        </li>
+        <li>
+          <a href="#designs">Designs</a>
         </li>
         <li>
           <a href="#contact">Contact</a>
@@ -129,8 +133,14 @@ function Skills() {
           { src: "slike/react.png", name: "React" },
           { src: "slike/node.png", name: "Node.js" },
           { src: "slike/sql.png", name: "SQL" },
+          { src: "slike/mongodb.png", name: "MongoDB" },
           { src: "slike/bootstrap.png", name: "Bootstrap" },
-          { src: "slike/worpdres.png", name: "WordPress" }
+          { src: "slike/worpdres.png", name: "WordPress" },
+          { src: "slike/figma.png", name: "Figma" },
+          { src: "slike/photoshop.png", name: "Adobe Photoshop" },
+
+
+
         ].map((skill, index) => (
           <div
             className="skill"
@@ -359,6 +369,27 @@ function Projects() {
           </a>{" "}
         </div>
               
+      </div>
+    </section>
+  );
+}
+
+function Designs() {
+  return (
+    <section className="designs-section" id="designs">
+      <h2>Designs</h2>
+      <div className="designs-container">
+        <div className="design-card">
+          <img
+            src="/slike/figma_movies.png"
+            alt="Web Dashboard Design"
+            className="design-image"
+          />
+          <h3>Web Dashboard UI</h3>
+          <h4>Tools: Figma, Adobe Photoshop</h4>
+          <a href="https://www.figma.com/proto/glY2KtZo4xNxOAhD3p2S2A/First-Project?node-id=1-2&t=p86t3j7DnU6wUBcs-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2">View Design</a>
+        </div>
+
       </div>
     </section>
   );
