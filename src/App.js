@@ -339,6 +339,14 @@ function Projects() {
     },
     {
       id: 4,
+      title: "Rap station",
+      description: "Music streaming platform in early development. Frontend is fully functional, while backend, including user authentication and profile creation, is still in progress.",
+      image: "/slike/rapStation.png",
+      technologies: ["React", "Tailwind", "Zustand"],
+      link: "https://rap-station.vercel.app/"
+    },
+    {
+      id: 5,
       title: "Quiz App",
       description: "Interactive knowledge testing application with score tracking.",
       image: "/slike/kviz.png",
@@ -353,14 +361,6 @@ function Projects() {
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://sasavulic7.github.io/Jelena/index.html"
     },
-    {
-      id: 7,
-      title: "Barber Shop",
-      description: "Service booking site for a hair salon with gallery. Created per client’s request. Demo version. School project.",
-      image: "/slike/salon.png",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      link: "https://sasavulic7.github.io/Frizerski%20salon/index.html"
-    }
   ];
 
   return (
