@@ -117,7 +117,7 @@ function Main() {
           </p>
           <div className="button-group">
             <a
-              href="/Sasa Vulic - CV.pdf"
+              href="/Sasa Vulic CV.pdf"
               download="Sasa Vulic CV.pdf"
               className="button primary"
             >
